@@ -1,5 +1,5 @@
 module Guard
-  module Phantomjs
+  module PhantomJSVersion
     VERSION = "0.0.1"
   end
 end

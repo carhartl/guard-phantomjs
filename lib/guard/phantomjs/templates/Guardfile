@@ -1,0 +1,5 @@
+guard 'phantomjs', :runner => 'run-jasmine.js' do
+  # Rails example
+  watch(%r{public/.+\.js})
+  watch(%r{^spec/javascripts/.+\.js})
+end
