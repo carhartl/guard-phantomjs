@@ -31,7 +31,7 @@ Jasmine runner:
                     var message = [desc.title, desc.nextSibling.querySelector('.resultMessage.fail').innerText];
                     console.log(message.join(' => '));
                 }
-                phantom.exit();
+                phantom.exit(failed.length);
             }
         }, 100);
     }
