@@ -8,6 +8,7 @@ module Guard
       super
 
       # @options[:runner] ||= 'run-jasmine.js'
+      @options[:phantom] ||= 'phantomjs'
       @options[:server] ||= 'http://127.0.0.1:8888/'
       @options = options
     end
@@ -19,7 +20,7 @@ module Guard
     def run_on_change(paths)
       return if paths.empty?
 
-      cmd = "phantomjs #{@options[:runner]} #{@options[:server]}"
+      cmd = "#{@options[:phantom]} #{@options[:runner]} #{@options[:server]}"
       result = %x[#{cmd}]
 
       notify(result, result =~ /0 failures/ ? :success : :failed)
